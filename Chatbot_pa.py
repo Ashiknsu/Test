@@ -1,7 +1,6 @@
-import openai
-import os
 import streamlit as st
-
+import os
+import openai
 
 def show_messages(text):
     messages_str = [
