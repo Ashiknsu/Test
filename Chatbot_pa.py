@@ -2,9 +2,9 @@ import openai
 
 import streamlit as st
 import os
-from os import environ as env
-openai.api_key = env.get('OPENAI_API_KEY')
-#openai.api_key = os.environ['OPENAI_API_KEY']
+
+
+openai.api_key = os.environ.get['OPENAI_API_KEY']
 
 def show_messages(text):
     messages_str = [
