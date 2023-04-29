@@ -2,7 +2,10 @@ import openai
 
 import streamlit as st
 import os
-openai.api_key = os.environ['OPENAI_API_KEY']
+from os import environ as env
+openai.api_key = env.get('OPENAI_API_KEY')
+#openai.api_key = os.environ['OPENAI_API_KEY']
+
 def show_messages(text):
     messages_str = [
         f"{_['role']}: {_['content']}" for _ in st.session_state["messages"][1:]
