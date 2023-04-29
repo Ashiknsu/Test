@@ -1,6 +1,7 @@
-import streamlit as st
-import os
 import openai
+import os
+import streamlit as st
+
 
 def show_messages(text):
     messages_str = [
@@ -9,7 +10,7 @@ def show_messages(text):
     text.text_area("Messages", value=str("\n".join(messages_str)), height=400)
 
 
-openai.api_key = os.getenv("openai_api_key")
+openai.api_key = os.environ["OPENAI_API_KEY"]
 BASE_PROMPT = [{"role": "system", "content": "You are a helpful assistant."}]
 
 if "messages" not in st.session_state:
